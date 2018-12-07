@@ -1,0 +1,33 @@
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: MySQL
+#    schema: classpath:schema.sql
+#    data: classpath:data.sql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/proxyclould?useUnicode=true&characterEncoding=utf8&autoReconnect=true&maxReconnects=3&rewriteBatchedStatements=true&failOverReadOnly=false&useSSL=false&serverTimezone=GMT%2B8"
+    username: root
+    password: 123456
+  application:
+    name: dubbo-provider
+
+  dubbo:
+    scan:
+       basePackages: com.example.demodubboprovider.service
+    server: true
+    registry: zookeeper://127.0.0.1:2181
+    protocol:
+       name: dubbo
+       port: 20880
+
+#logging:
+#  level:
+#    root: INFO
+#    org.hibernate: INFO
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+#    com.itmuch: DEBUG

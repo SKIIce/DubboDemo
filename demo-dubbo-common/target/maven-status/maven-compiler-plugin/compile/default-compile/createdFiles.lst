@@ -1,0 +1,4 @@
+com\example\demain\Tenant.class
+com\example\dao\TenantDao.class
+com\example\dao\UserDao.class
+com\example\demain\User.class

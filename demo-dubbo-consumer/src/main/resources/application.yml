@@ -1,0 +1,9 @@
+spring:
+  dubbo:
+    server: false
+    registry: zookeeper://127.0.0.1:2181
+    base-package: com.example.dubbo.service
+    reference:
+      interface: com.example.dubbo.service.UserService,example.dubbo.service.TenantService
+      loadbalance: roundrobin
+
